@@ -50,7 +50,7 @@ $return_arr = array();
 if($device == ""){
 
 if($dev == "Gapps"){
-$url = "http://androtransfer.com/?developer=".$dev;
+$url = "http://andro.sudoservers.com/?developer=".$dev;
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,"$url");
@@ -74,10 +74,10 @@ $res = strstr($gurl, "<div style='float: left; margin-left: 10px; width: 668px'>
       {
 
         $res = strstr ($res, "<tr class='download'>");
-   
+
 	$filename = extstr3($res,".zip'>","</a>");
 	$url = extstr3($res,"<a style='display: block' href='","'>");
-	$url = 'http://androtransfer.com/'.$url;
+	$url = 'http://andro.sudoservers.com/'.$url;
 	$md5 = extstr3($res,"<span style='font-family: Courier'>","</span>");
 
         $dateres = strstr ($res, "<span style='font-family: Courier'>");
@@ -137,7 +137,7 @@ echo '<br>';
 
 // is not gapps
 }else{
-$url = "http://androtransfer.com/?developer=".$dev;
+$url = "http://andro.sudoservers.com/?developer=".$dev;
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,"$url");
@@ -161,7 +161,7 @@ $res = strstr($gurl, "<div id='sidebar'>");
       {
 
         $res = strstr ($res, "<li class=''>");
-   
+
 	$device = extstr3($res,"folder=","'>");
 
         $res = strstr ($res, '<li>');
@@ -200,7 +200,7 @@ echo '<br><br>';
 /// device is defined
 }else{
 
-$url = "http://androtransfer.com/?developer=".$dev."&folder=".$device;
+$url = "http://andro.sudoservers.com/?developer=".$dev."&folder=".$device;
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,"$url");
@@ -224,10 +224,10 @@ $res = strstr($gurl, "<div style='float: left; margin-left: 10px; width: 668px'>
       {
 
         $res = strstr ($res, "<tr class='download'>");
-   
+
 	$filename = extstr3($res,".zip'>","</a>");
 	$url = extstr3($res,"<a style='display: block' href='","'>");
-	$url = 'http://androtransfer.com/'.$url;
+	$url = 'http://andro.sudoservers.com/'.$url;
 	$md5 = extstr3($res,"<span style='font-family: Courier'>","</span>");
 
         $dateres = strstr ($res, "<span style='font-family: Courier'>");

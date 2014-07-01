@@ -6,16 +6,16 @@
 	<div class="lens-flare"></div>
 	<div class="header-container">
 		<header class="wrapper clearfix">
-			<a href="http://androxfer.in">
+			<a href="http://andro.sudoservers.com">
 <pre style="white-space: pre;">
-                 _         __  __ __           
-  __ _ _ __   __| |_ __ ___\ \/ // _| ___ _ __ 
- / _` | '_ \ / _` | '__/ _ \\  /| |_ / _ \ '__|
-| (_| | | | | (_| | | | (_) /  \|  _|  __/ |   
- \__,_|_| |_|\__,_|_|  \___/_/\_\_|  \___|_|   
-                          /// powered by       
-                         /// Bytemark.co.uk    
-                                               
+             _        __  __ __
+  __ _  ___ | | ___ __\ \/ // _| ___ _ __
+ / _` |/ _ \| |/ / '_ \\  /| |_ / _ \ '__|
+| (_| | ( ) |   <| |_) /  \|  _|  __/ |
+ \__,_|\___/|_|\_\ .__/_/\_\_|  \___|_|
+                 |_| /// powered by
+                    /// aokp.co
+
 </pre>
 			</a>
 			<div class="partners">
@@ -28,6 +28,6 @@
 		<ul>
 			<?php foreach($users as $user): ?>
 			<li class='<?= $currentDeveloper == $user ? "active" : "" ?>'><a href='/?developer=<?= $user ?>'><?= $user ?></a></li>
-			<?php endforeach ?>	
+			<?php endforeach ?>
 		</ul>
 	</div><!-- end devs -->

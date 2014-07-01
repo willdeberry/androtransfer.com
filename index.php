@@ -24,8 +24,8 @@ $thedomain =  $_SERVER['HTTP_HOST'];
 $thedomain = "http://" .$thedomain. "/";
 
 
-/* if(($thedomain!='http://androtransfer.com/')&&($thedomain!='http://www.androtransfer.com/')){
-header('Location: http://androtransfer.com/',true,301);
+/* if(($thedomain!='http://andro.sudoservers.com/')&&($thedomain!='http://www.androtransfer.com/')){
+header('Location: http://andro.sudoservers.com/',true,301);
 die;
 }
 */
@@ -210,7 +210,7 @@ if ($currentDeveloper) {
 
 <?php include 'androxfer-head.php'; ?>
 <?php include 'androxfer-header.php'; ?>
-				
+
 <?php if($currentDeveloper): ?>
 	<div id="folders" class="andro-column">
 		<h2><i class="icon icon-user"></i>~/<?= htmlspecialchars($currentDeveloper) ?></h2>

@@ -181,6 +181,7 @@ body {
 
 .header-container header a {
 	text-decoration: none;
+    float:left;
 }
 
 .footer-container,
@@ -449,6 +450,7 @@ to {background: none; color: #0a0;text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);}
 	header .partners h2 {
 		padding: 5px 7px 10px;
 		margin-bottom: 7px;
+        float: left;
 	}
 
 	header .partners .inner-partners {
@@ -561,7 +563,7 @@ to {background: none; color: #0a0;text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);}
 
 	header .partners a {
 		display: inline-block;
-		float: none;
+		float: left;
 		margin: 0;
 		width: 49%;
 	}

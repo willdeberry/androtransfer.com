@@ -38,7 +38,7 @@ function get_info($url){
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,"$url");
 curl_setopt($ch, CURLOPT_USERAGENT, "AndroBot");
-curl_setopt($ch, CURLOPT_REFERER, "http://androxfer.in/"); 
+curl_setopt($ch, CURLOPT_REFERER, "http://andro.sudoservers.com/");
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, "10");
@@ -55,7 +55,7 @@ $opts = array(CURLOPT_RETURNTRANSFER => true, // do not output to browser
 CURLOPT_URL => $url,            // set URL
 CURLOPT_NOBODY => true,         // do a HEAD request only
 CURLOPT_TIMEOUT => $timeout);   // set timeout
-curl_setopt_array($ch, $opts); 
+curl_setopt_array($ch, $opts);
 curl_exec($ch);
 $retval = curl_getinfo($ch, CURLINFO_HTTP_CODE) == 200; // check if HTTP OK
 curl_close($ch); // close handle
@@ -86,8 +86,8 @@ $blacklist = array('php');
 
 //assign mirrors
 //$chaos = 'http://chaos.xfer.in/';
-$apollo = 'http://apollo.xfer.in/';
-$dionysus = 'http://dionysus.xfer.in/';
+$apollo = 'http://andro.sudoservers.com/';
+//$dionysus = 'http://dionysus.xfer.in/';
 //$erebos = 'http://erebos.xfer.in/';
 
 ///assign stats urls
@@ -121,14 +121,14 @@ if($random == '1'){
 $mirrors = array(
 //    $chaos => $load1,
     $apollo => $load2,
-    $dionysus => $load3
+//    $dionysus => $load3
 //    $erebos => $load4
 );
 }
 if($random == '2'){
 $mirrors = array(
 //    $erebos => $load4,
-    $dionysus => $load3,
+//    $dionysus => $load3,
     $apollo => $load2
 //    $chaos => $load1
 );
@@ -158,7 +158,7 @@ if(in_array($ext, $blacklist)) {
     die($ext." is not an allowed extension.");
 }
 if(strpos($path, '../') !== false || strpos($path, '..\\') !== false || strpos(realpath($baseDir.'/'.$path), 'public_html') == false) {
-    die("<meta http-equiv=\"refresh\" content=\"5;url=http://androxfer.in/\" /> Error: 2 [ Not Allowed ]");
+    die("<meta http-equiv=\"refresh\" content=\"5;url=http://andro.sudoservers.com/\" /> Error: 2 [ Not Allowed ]");
 }
 
 $location = $baseDir."/.counts";
@@ -239,7 +239,7 @@ die;
 $ref=$_SERVER['HTTP_REFERER'];
 $ref='http://google.com/';
 
-if (strpos($ref,'http://androxfer.in/')===0 || strpos($ref,'http')!==0 || strpos($ref,'http://www.androxfer.in/')===0){
+if (strpos($ref,'http://andro.sudoservers.com/')===0 || strpos($ref,'http')!==0 || strpos($ref,'http://www.andro.sudoservers.com/')===0){
 	header("Location: ".$dlink);
 }else{
 	$file = $baseDir . "/" . $path;
@@ -256,15 +256,12 @@ if (strpos($ref,'http://androxfer.in/')===0 || strpos($ref,'http')!==0 || strpos
 				<p>File: <?=basename($_GET['p']);?></p>
 				<p>md5: <?=md5_file($file);?></p>
 				<p id="counttext"><span id='countDown'>10</span> second(s) left</span></p>
-				<div class="downloading-ad">
-					<?php include 'androxfer-google_ad_2.php'; ?>
-				</div>
 			</div>
 		</div>
 	</div>
 
 <?php include 'androxfer-footer.php'; ?>
-	
+
 <script type="text/javascript">
 function startCountDown(i, p, f) {
 // store parameters
@@ -301,7 +298,7 @@ countDownObj.count(i);
 function do_download(){
 var newtext = "Initializing File Download...";
 document.getElementById('counttext').innerHTML = newtext;
-document.location.href='http://androxfer.in/get.php?p=<?=$_GET['p']?>&countdown=1';
+document.location.href='http://andro.sudoservers.com/get.php?p=<?=$_GET['p']?>&countdown=1';
 }
 </script>
 
@@ -313,7 +310,7 @@ document.location.href='http://androxfer.in/get.php?p=<?=$_GET['p']?>&countdown=
 }
 
 }else{
-	
+
 if($_GET['countdown']){
 ?>
 
@@ -328,15 +325,12 @@ if($_GET['countdown']){
 				<p>File: <?=basename($_GET['p']);?></p>
 				<p>md5: <?=md5_file($file);?></p>
 				<p id="counttext"><span id='countDown'>10</span> second(s) left</span></p>
-				<div class="downloading-ad">
-					<?php include 'androxfer-google_ad_2.php'; ?>
-				</div>
 			</div>
 		</div>
 	</div>
 
 <?php include 'androxfer-footer.php'; ?>
-	
+
 <script type="text/javascript">
 function startCountDown(i, p, f) {
 // store parameters
@@ -373,7 +367,7 @@ countDownObj.count(i);
 function do_download(){
 var newtext = "Initializing File Download...";
 document.getElementById('counttext').innerHTML = newtext;
-document.location.href='http://androxfer.in/get.php?p=<?=$_GET['p']?>&countdown=1';
+document.location.href='http://andro.sudoservers.com/get.php?p=<?=$_GET['p']?>&countdown=1';
 }
 </script>
 
@@ -386,7 +380,7 @@ die;
 }else{
 
 if($_GET['countdown']){
-	
+
  header("Pragma: public");
  header("Expires: 0");
  header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
@@ -414,15 +408,12 @@ $file = $baseDir . "/" . $path;
 				<p>File: <?=basename($_GET['p']);?></p>
 				<p>md5: <?=md5_file($file);?></p>
 				<p id="counttext"><span id='countDown'>10</span> second(s) left</span></p>
-				<div class="downloading-ad">
-					<?php include 'androxfer-google_ad_2.php'; ?>
-				</div>
 			</div>
 		</div>
 	</div>
 
 <?php include 'androxfer-footer.php'; ?>
-	
+
 <script type="text/javascript">
 function startCountDown(i, p, f) {
 // store parameters
@@ -459,7 +450,7 @@ countDownObj.count(i);
 function do_download(){
 var newtext = "Initializing File Download...";
 document.getElementById('counttext').innerHTML = newtext;
-document.location.href='http://androxfer.in/get.php?p=<?=$_GET['p']?>&directserve=1';
+document.location.href='http://andro.sudoservers.com/get.php?p=<?=$_GET['p']?>&directserve=1';
 }
 </script>
 

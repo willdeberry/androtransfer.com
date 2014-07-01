@@ -1,6 +1,6 @@
 
 // Coded by George Merlocco 
-//	 for http://androxfer.in
+//	 for http://andro.sudoservers.com
 //
 
 

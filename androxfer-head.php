@@ -8,13 +8,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 	<? if(($_GET['developer'])&&(!$_GET['folder'])){ ?>
-	<title><?=$_GET['developer'];?> Downloads @ AndroXfer.in</title>
+	<title><?=$_GET['developer'];?> Downloads @ aokpXfer</title>
 	<? } ?>
 	<? if(($_GET['developer'])&&($_GET['folder'])){ ?>
-	<title><?=$_GET['developer'];?> Downloads For <?=$_GET['folder'];?> @ AndroXfer.in</title>
+	<title><?=$_GET['developer'];?> Downloads For <?=$_GET['folder'];?> @ aokpXfer</title>
 	<? } ?>
 	<? if((!$_GET['developer'])&&(!$_GET['folder'])){ ?>
-	<title>AndroXfer.in</title>
+	<title>aokpXfer</title>
 	<? } ?>
 
 
