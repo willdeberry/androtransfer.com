@@ -36,7 +36,7 @@ function get_info($url){
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,"$url");
 curl_setopt($ch, CURLOPT_USERAGENT, "AndroBot");
-curl_setopt($ch, CURLOPT_REFERER, "http://andro.sudoservers.com/");
+curl_setopt($ch, CURLOPT_REFERER, "http://xfer.aokp.co/");
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, "10");
@@ -156,7 +156,7 @@ if(in_array($ext, $blacklist)) {
     die($ext." is not an allowed extension.");
 }
 if(strpos($path, '../') !== false || strpos($path, '..\\') !== false || strpos(realpath($baseDir.'/'.$path), 'public_html') == false) {
-    die("<meta http-equiv=\"refresh\" content=\"5;url=http://andro.sudoservers.com/\" /> Error: 2 [ Not Allowed ]");
+    die("<meta http-equiv=\"refresh\" content=\"5;url=http://xfer.aokp.co/\" /> Error: 2 [ Not Allowed ]");
 }
 
 $location = $baseDir."/.counts";
@@ -237,7 +237,7 @@ die;
 $ref=$_SERVER['HTTP_REFERER'];
 $ref='http://google.com/';
 
-if (strpos($ref,'http://andro.sudoservers.com/')===0 || strpos($ref,'http')!==0 || strpos($ref,'http://www.androtransfer.com/')===0){
+if (strpos($ref,'http://xfer.aokp.co/')===0 || strpos($ref,'http')!==0 || strpos($ref,'http://www.androtransfer.com/')===0){
 	header("Location: ".$dlink);
 }else{
 	$file = $baseDir . "/" . $path;
@@ -246,7 +246,7 @@ if (strpos($ref,'http://andro.sudoservers.com/')===0 || strpos($ref,'http')!==0 
 <!DOCTYPE html>
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>File Download: <?=basename($_GET['p']);?> | Androtransfer.com</title>
-    <link type="text/css" rel="stylesheet" href="http://andro.sudoservers.com/style.css">
+    <link type="text/css" rel="stylesheet" href="http://xfer.aokp.co/style.css">
 <script type="text/rocketscript">
 
   var _gaq = _gaq || [];
@@ -302,7 +302,7 @@ countDownObj.count(i);
 function do_download(){
 var newtext = "Please wait, Serving file...";
 document.getElementById('counttext').innerHTML = newtext;
-document.location.href='http://andro.sudoservers.com/get.php?p=<?=$_GET['p']?>&countdown=1';
+document.location.href='http://xfer.aokp.co/get.php?p=<?=$_GET['p']?>&countdown=1';
 }
 </script>
 
@@ -311,7 +311,7 @@ document.location.href='http://andro.sudoservers.com/get.php?p=<?=$_GET['p']?>&c
 
 
     <div id="header">
-        <table width="100%"><tr><td><img src="http://andro.sudoservers.com/images/title.png" width="98%" height="auto"></td>
+        <table width="100%"><tr><td><img src="http://xfer.aokp.co/images/title.png" width="98%" height="auto"></td>
 <td style="text-align:right;">
 <script type="text/javascript"><!--
 google_ad_client = "ca-pub-6244853272122205";
@@ -330,9 +330,9 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
     </div>
     <?
-	$menu = file_get_contents('http://andro.sudoservers.com');
+	$menu = file_get_contents('http://xfer.aokp.co');
 	$menu = fetch($menu,"<div id='links' class='block'>","<div id='page'>");
-	$menu = str_replace("?developer=", "http://andro.sudoservers.com/?developer=", $menu);
+	$menu = str_replace("?developer=", "http://xfer.aokp.co/?developer=", $menu);
 	?>
     <div id="links" class="block">
 	<?=$menu?>
@@ -387,7 +387,7 @@ if($_GET['countdown']){
 <!DOCTYPE html>
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>File Download: <?=basename($_GET['p']);?> | Androtransfer.com</title>
-    <link type="text/css" rel="stylesheet" href="http://andro.sudoservers.com/style.css">
+    <link type="text/css" rel="stylesheet" href="http://xfer.aokp.co/style.css">
 <script type="text/rocketscript">
 
   var _gaq = _gaq || [];
@@ -443,7 +443,7 @@ countDownObj.count(i);
 function do_download(){
 var newtext = "Please wait, Serving file...";
 document.getElementById('counttext').innerHTML = newtext;
-document.location.href='http://andro.sudoservers.com/get.php?p=<?=$_GET['p']?>&countdown=1';
+document.location.href='http://xfer.aokp.co/get.php?p=<?=$_GET['p']?>&countdown=1';
 }
 </script>
 
@@ -452,7 +452,7 @@ document.location.href='http://andro.sudoservers.com/get.php?p=<?=$_GET['p']?>&c
 
 
     <div id="header">
-        <table width="100%"><tr><td><img src="http://andro.sudoservers.com/images/title.png" width="98%" height="auto"></td>
+        <table width="100%"><tr><td><img src="http://xfer.aokp.co/images/title.png" width="98%" height="auto"></td>
 <td style="text-align:right;">
 <script type="text/javascript"><!--
 google_ad_client = "ca-pub-6244853272122205";
@@ -471,9 +471,9 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
     </div>
     <?
-	$menu = file_get_contents('http://andro.sudoservers.com');
+	$menu = file_get_contents('http://xfer.aokp.co');
 	$menu = fetch($menu,"<div id='links' class='block'>","<div id='page'>");
-	$menu = str_replace("?developer=", "http://andro.sudoservers.com/?developer=", $menu);
+	$menu = str_replace("?developer=", "http://xfer.aokp.co/?developer=", $menu);
 	?>
     <div id="links" class="block">
 	<?=$menu?>
@@ -541,7 +541,7 @@ $file = $baseDir . "/" . $path;
 <!DOCTYPE html>
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>File Download: <?=basename($_GET['p']);?> | Androtransfer.com</title>
-    <link type="text/css" rel="stylesheet" href="http://andro.sudoservers.com/style.css">
+    <link type="text/css" rel="stylesheet" href="http://xfer.aokp.co/style.css">
 <script type="text/rocketscript">
 
   var _gaq = _gaq || [];
@@ -597,7 +597,7 @@ countDownObj.count(i);
 function do_download(){
 var newtext = "Please wait, Serving file...";
 document.getElementById('counttext').innerHTML = newtext;
-document.location.href='http://andro.sudoservers.com/get.php?p=<?=$_GET['p']?>&directserve=1';
+document.location.href='http://xfer.aokp.co/get.php?p=<?=$_GET['p']?>&directserve=1';
 }
 </script>
 
@@ -606,7 +606,7 @@ document.location.href='http://andro.sudoservers.com/get.php?p=<?=$_GET['p']?>&d
 
 
     <div id="header">
-        <table width="100%"><tr><td><img src="http://andro.sudoservers.com/images/title.png" width="98%" height="auto"></td>
+        <table width="100%"><tr><td><img src="http://xfer.aokp.co/images/title.png" width="98%" height="auto"></td>
 <td style="text-align:right;">
 <script type="text/javascript"><!--
 google_ad_client = "ca-pub-6244853272122205";
@@ -625,9 +625,9 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
     </div>
     <?
-	$menu = file_get_contents('http://andro.sudoservers.com');
+	$menu = file_get_contents('http://xfer.aokp.co');
 	$menu = fetch($menu,"<div id='links' class='block'>","<div id='page'>");
-	$menu = str_replace("?developer=", "http://andro.sudoservers.com/?developer=", $menu);
+	$menu = str_replace("?developer=", "http://xfer.aokp.co/?developer=", $menu);
 	?>
     <div id="links" class="block">
 	<?=$menu?>

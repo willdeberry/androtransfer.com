@@ -24,8 +24,8 @@ $thedomain =  $_SERVER['HTTP_HOST'];
 $thedomain = "http://" .$thedomain. "/";
 
 
-/* if(($thedomain!='http://andro.sudoservers.com/')&&($thedomain!='http://www.androtransfer.com/')){
-header('Location: http://andro.sudoservers.com/',true,301);
+/* if(($thedomain!='http://xfer.aokp.co/')&&($thedomain!='http://www.androtransfer.com/')){
+header('Location: http://xfer.aokp.co/',true,301);
 die;
 }
 */

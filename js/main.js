@@ -1,6 +1,6 @@
 
 // Coded by George Merlocco 
-//	 for http://andro.sudoservers.com
+//	 for http://xfer.aokp.co
 //
 
 

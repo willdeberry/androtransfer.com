@@ -38,7 +38,7 @@ function get_info($url){
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,"$url");
 curl_setopt($ch, CURLOPT_USERAGENT, "AndroBot");
-curl_setopt($ch, CURLOPT_REFERER, "http://andro.sudoservers.com/");
+curl_setopt($ch, CURLOPT_REFERER, "http://xfer.aokp.co/");
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, "10");
@@ -86,13 +86,13 @@ $blacklist = array('php');
 
 //assign mirrors
 //$chaos = 'http://chaos.xfer.in/';
-$apollo = 'http://andro.sudoservers.com/';
+$apollo = 'http://xfer.aokp.co/';
 //$dionysus = 'http://dionysus.xfer.in/';
 //$erebos = 'http://erebos.xfer.in/';
 
 ///assign stats urls
 //$server1='http://chaosstats.xfer.in/multiservers/upload/multiserv.php?action=stat';
-$server2='http://andro.sudoservers.com/multiservers/upload/multiserv.php?action=stat';
+$server2='http://xfer.aokp.co/multiservers/upload/multiserv.php?action=stat';
 //$server3='http://dionysusstats.xfer.in/multiservers/upload/multiserv.php?action=stat';
 //$server4='http://erebosstats.xfer.in/multiservers/upload/multiserv.php?action=stat';
 
@@ -158,7 +158,7 @@ if(in_array($ext, $blacklist)) {
     die($ext." is not an allowed extension.");
 }
 if(strpos($path, '../') !== false || strpos($path, '..\\') !== false || strpos(realpath($baseDir.'/'.$path), 'public_html') == false) {
-    die("<meta http-equiv=\"refresh\" content=\"5;url=http://andro.sudoservers.com/\" /> Error: 2 [ Not Allowed ]");
+    die("<meta http-equiv=\"refresh\" content=\"5;url=http://xfer.aokp.co/\" /> Error: 2 [ Not Allowed ]");
 }
 
 $location = $baseDir."/.counts";
@@ -239,7 +239,7 @@ die;
 $ref=$_SERVER['HTTP_REFERER'];
 $ref='http://google.com/';
 
-if (strpos($ref,'http://andro.sudoservers.com/')===0 || strpos($ref,'http')!==0 || strpos($ref,'http://www.andro.sudoservers.com/')===0){
+if (strpos($ref,'http://xfer.aokp.co/')===0 || strpos($ref,'http')!==0 || strpos($ref,'http://www.andro.sudoservers.com/')===0){
 	header("Location: ".$dlink);
 }else{
 	$file = $baseDir . "/" . $path;
@@ -298,7 +298,7 @@ countDownObj.count(i);
 function do_download(){
 var newtext = "Initializing File Download...";
 document.getElementById('counttext').innerHTML = newtext;
-document.location.href='http://andro.sudoservers.com/get.php?p=<?=$_GET['p']?>&countdown=1';
+document.location.href='http://xfer.aokp.co/get.php?p=<?=$_GET['p']?>&countdown=1';
 }
 </script>
 
@@ -367,7 +367,7 @@ countDownObj.count(i);
 function do_download(){
 var newtext = "Initializing File Download...";
 document.getElementById('counttext').innerHTML = newtext;
-document.location.href='http://andro.sudoservers.com/get.php?p=<?=$_GET['p']?>&countdown=1';
+document.location.href='http://xfer.aokp.co/get.php?p=<?=$_GET['p']?>&countdown=1';
 }
 </script>
 
@@ -450,7 +450,7 @@ countDownObj.count(i);
 function do_download(){
 var newtext = "Initializing File Download...";
 document.getElementById('counttext').innerHTML = newtext;
-document.location.href='http://andro.sudoservers.com/get.php?p=<?=$_GET['p']?>&directserve=1';
+document.location.href='http://xfer.aokp.co/get.php?p=<?=$_GET['p']?>&directserve=1';
 }
 </script>
 

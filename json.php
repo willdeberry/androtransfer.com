@@ -50,7 +50,7 @@ $return_arr = array();
 if($device == ""){
 
 if($dev == "Gapps"){
-$url = "http://andro.sudoservers.com/?developer=".$dev;
+$url = "http://xfer.aokp.co/?developer=".$dev;
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,"$url");
@@ -77,7 +77,7 @@ $res = strstr($gurl, "<div style='float: left; margin-left: 10px; width: 668px'>
 
 	$filename = extstr3($res,".zip'>","</a>");
 	$url = extstr3($res,"<a style='display: block' href='","'>");
-	$url = 'http://andro.sudoservers.com/'.$url;
+	$url = 'http://xfer.aokp.co/'.$url;
 	$md5 = extstr3($res,"<span style='font-family: Courier'>","</span>");
 
         $dateres = strstr ($res, "<span style='font-family: Courier'>");
@@ -137,7 +137,7 @@ echo '<br>';
 
 // is not gapps
 }else{
-$url = "http://andro.sudoservers.com/?developer=".$dev;
+$url = "http://xfer.aokp.co/?developer=".$dev;
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,"$url");
@@ -200,7 +200,7 @@ echo '<br><br>';
 /// device is defined
 }else{
 
-$url = "http://andro.sudoservers.com/?developer=".$dev."&folder=".$device;
+$url = "http://xfer.aokp.co/?developer=".$dev."&folder=".$device;
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL,"$url");
@@ -227,7 +227,7 @@ $res = strstr($gurl, "<div style='float: left; margin-left: 10px; width: 668px'>
 
 	$filename = extstr3($res,".zip'>","</a>");
 	$url = extstr3($res,"<a style='display: block' href='","'>");
-	$url = 'http://andro.sudoservers.com/'.$url;
+	$url = 'http://xfer.aokp.co/'.$url;
 	$md5 = extstr3($res,"<span style='font-family: Courier'>","</span>");
 
         $dateres = strstr ($res, "<span style='font-family: Courier'>");
