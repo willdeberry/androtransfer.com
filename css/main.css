@@ -25,7 +25,7 @@ textarea {
 body {
     font-size: 1em;
     line-height: 1.4;
-	text-shadow: 0 0 4px rgba(0,222,0,0.6);
+	text-shadow: none;
 }
 
 ::-moz-selection {
@@ -60,15 +60,15 @@ h1, h2, h3, h4 {
 h2 {
 	padding: 4px 15px 7px 5px;
 	margin: 0;
-	background: #0a0;
-	color: #030;
+	background: url(../images/main-bg.png) repeat #111;
+	color: #ccc;
 	letter-spacing: -2px;
 }
 
 a, a:visited {
-	color: #0c0;
-    text-decoration: underline;
-	text-shadow: 0 0 6px rgba(0,222,0,0.8);
+	color: #E4418B;
+    text-decoration: none;
+	text-shadow: 0 1px 0 #c99;
 	-webkit-transition: all 500ms ease-out;
 	-moz-transition: all 500ms ease-out;
 	-ms-transition: all 500ms ease-out;
@@ -77,14 +77,14 @@ a, a:visited {
 }
 
 a:hover {
-	background: #0f0;
-	color: #030;
+	background: #000;
+	color: #33b5e5;
     text-decoration: none;
-	text-shadow: 0 0 1px rgba(0,0,0,0.5);
+	text-shadow: none;
 }
 
 a:active {
-	color: #0a0;
+	color: #000;
 }
 
 ul {
@@ -124,10 +124,10 @@ body{
 }
 
 ::-webkit-scrollbar { width: 12px; height: 12px;}
-::-webkit-scrollbar-button {  background-color: #0a0; }
+::-webkit-scrollbar-button {  background-color: #33b5e5; }
 ::-webkit-scrollbar-track {  background-color: #0a0;}
-::-webkit-scrollbar-track-piece { background-color: #040;}
-::-webkit-scrollbar-thumb { background-color: #0c0; border-radius: 3px;}
+::-webkit-scrollbar-track-piece { background-color: #245668;}
+::-webkit-scrollbar-thumb { background-color: #E4418B; border-radius: 7px;}
 ::-webkit-scrollbar-corner { background-color: #0a0;}}
 ::-webkit-resizer { background-color: #0a0;}
 
@@ -163,12 +163,13 @@ scrollbar[orient="vertical"] {
 
 html {
 	height: 100%;
+	background: url(../images/html-bg.png) repeat;
 }
    
 body {
 	font: 14px/18px droidsans, Consolas, Terminal, Monospace;
-	color: #0a0;
-	background: url(../images/body_bg.gif) repeat;
+	color: #fff;
+	background: url(../images/body_bg_pink.gif) repeat-x;
 }
 
 .lens-flare {
@@ -206,7 +207,9 @@ header a {
 
 header a pre {
 	font-size: 10px;
+    font-family: droidsans, monospace;
 	line-height: 12px;
+    color: #ccc;
 }
 
 header .partners {
@@ -277,9 +280,9 @@ header .partners {
 }
 
 .andro-column ul li.active a {
-	background: #0f0;
-	color: #030;
-	text-shadow: 0 0 1px rgba(0,0,0,0.5);
+	background: #000;
+	color: #ccc;
+	text-shadow: none;
 }
 
 .dir-message {
@@ -301,12 +304,12 @@ header .partners {
 }
 
 #links p#counttext {
-	background: #0a0;
-	color: #040;
+	background: rgba(255, 255, 255, 0.15);
+	color: #ccc;
 	margin-top: 10px;
 	font-weight: bold;
 	text-align: center;
-	text-shadow: 0 0 4px rgba(0, 222, 0, 0.6);
+	text-shadow: none;
 	animation-name: glow;
 	animation-delay: 0s;
 	animation-duration: 1s;
@@ -327,14 +330,14 @@ header .partners {
 
 @keyframes glow
 {
-from {background: #0a0; color: #040;text-shadow: 0 0 4px rgba(0, 222, 0, 0.6);}
-to {background: none; color: #0a0;text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);}
+from {background: #222; color: #ccc;text-shadow: 0 0 4px rgba(0, 222, 0, 0.6);}
+to {background: none; color: #ccc;text-shadow: 0 0 4px rgba(255, 255, 255, 0.15);}
 }
 
 @-webkit-keyframes glow /* Safari and Chrome */
 {
-from {background: #0a0; color: #040;text-shadow: 0 0 4px rgba(0, 222, 0, 0.6);}
-to {background: none; color: #0a0;text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);}
+from {background: #222; color: #ccc;text-shadow: 0 0 4px rgba(0, 222, 0, 0.6);}
+to {background: none; color: #ccc;text-shadow: 0 0 4px rgba(255, 255, 255, 0.15);}
 }
 
 .downloading-ad {
@@ -342,8 +345,8 @@ to {background: none; color: #0a0;text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);}
 }
 
 #filelisting thead tr th {
-	background: #080;
-	color: #0d0;
+	background: #222;
+	color: #fff;
 	text-shadow: 0 0 0;
 	cursor: pointer;
 	font-size: 12px;
@@ -352,13 +355,13 @@ to {background: none; color: #0a0;text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);}
 }
 
 #filelisting thead tr th.headerSortUp { 
-    background: url(../images/sort_down.png) no-repeat right 2px center #0f0;
-	color: #040;
+    background: url(../images/sort_down.png) no-repeat right 2px center rgba(255, 255, 255, 0.15);
+	color: #33b5e5;
 } 
 
 #filelisting thead tr th.headerSortDown { 
-    background: url(../images/sort_up.png) no-repeat right 2px center #0f0; 
-	color: #040;
+    background: url(../images/sort_up.png) no-repeat right 2px center rgba(255, 255, 255, 0.15);
+	color: #33b5e5;
 } 
 
 #filelisting tbody tr td {
@@ -403,7 +406,8 @@ to {background: none; color: #0a0;text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);}
 }
 
 .footer-container a {
-	color: #000;
+	color: #E4418B;
+    text-shadow: 0 1px 0 #c99;
 }
 
 /* ===============
