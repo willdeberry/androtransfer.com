@@ -85,54 +85,54 @@ $blacklist = array('php');
 
 
 //assign mirrors
-//$chaos = 'http://chaos.xfer.in/';
+$chaos = 'http://xfer.sudoservers.com/';
 $apollo = 'http://xfer.aokp.co/';
 //$dionysus = 'http://dionysus.xfer.in/';
 //$erebos = 'http://erebos.xfer.in/';
 
 ///assign stats urls
-//$server1='http://chaosstats.xfer.in/multiservers/upload/multiserv.php?action=stat';
+$server1='http://xfer.sudoservers.com/multiservers/upload/multiserv.php?action=stat';
 $server2='http://xfer.aokp.co/multiservers/upload/multiserv.php?action=stat';
 //$server3='http://dionysusstats.xfer.in/multiservers/upload/multiserv.php?action=stat';
 //$server4='http://erebosstats.xfer.in/multiservers/upload/multiserv.php?action=stat';
 
-//$server1_res = get_info($server1); //run curl to get stats
+$server1_res = get_info($server1); //run curl to get stats
 $server2_res = get_info($server2);
 //$server3_res = get_info($server3);
 //$server4_res = get_info($server4);
 
-//$load1 = fetch($server1_res,'<load>','</load>'); //get current load avg from mirrors
+$load1 = fetch($server1_res,'<load>','</load>'); //get current load avg from mirrors
 $load2 = fetch($server2_res,'<load>','</load>');
 //$load3 = fetch($server3_res,'<load>','</load>');
 //$load4 = fetch($server4_res,'<load>','</load>');
 
-//$load1 = percent($load1,12.00); //generate percent based on number of cpus
-$load2 = percent($load2,8.00);
+$load1 = percent($load1,8.00); //generate percent based on number of cpus
+$load2 = percent($load2,2.00);
 //$load3 = percent($load3,6.00);
 //$load4 = percent($load4,1.00);
 
 //randomize so script does not favor a server.
 // make an array of mirrors and there current cpu load
 
-//$random = rand(1,2);
-$random = 1;
+$random = rand(1,2);
+//$random = 1;
 
 if($random == '1'){
 $mirrors = array(
-//    $chaos => $load1,
-    $apollo => $load2,
+    $chaos => $load1,
+    $apollo => $load2
 //    $dionysus => $load3
 //    $erebos => $load4
 );
 }
-//if($random == '2'){
-//$mirrors = array(
+if($random == '2'){
+$mirrors = array(
 //    $erebos => $load4,
 //    $dionysus => $load3,
-//    $apollo => $load2
-//    $chaos => $load1
-//);
-//}
+    $apollo => $load2,
+    $chaos => $load1
+);
+}
 //if($random == '3'){
 //$mirrors = array(
 //    $chaos => $load1,
