@@ -37,13 +37,13 @@ def showDevices(user):
     print(json.dumps(data))
 
 def showRoms(user,device):
-    data = {}
+    data = []
     for f in os.listdir("%s/%s" % (user, device)):
         if not f.startswith('.'):
             url = "http://xfer.aokp.co/%s/%s/%s" % (user, device, f)
             modified_date = os.path.getmtime("%s/%s/%s" % (user, device, f))
             readable_date = datetime.fromtimestamp(modified_date).strftime("%D")
-            data[readable_date] = url
+            data.append({"date":readable_date,"url":url})
 
     print(json.dumps(data))
 
