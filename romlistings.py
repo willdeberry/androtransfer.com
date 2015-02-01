@@ -1,5 +1,15 @@
 #!/usr/bin/python
 
+# This creates an API for xfer.AOKP.co
+# Allows you to be able to poll for which users are available, which devices
+# each user has, and what ROMs are available for download per device.
+#
+# Usage Examples:
+#
+# Users available: http://xfer.aokp.co/romlistings.py
+# Devices available for specific User: http//xfer.aokp.co/romlistings.py?user=NAME
+# ROMs available for download: http//xfer.aokp.co/romlistings.py?user=NAME&device=HARDWARE
+
 import cgi
 import json
 import os
