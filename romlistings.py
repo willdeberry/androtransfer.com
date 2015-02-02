@@ -71,15 +71,17 @@ def showAll():
             data[user] = {}
             for device in showDevices(user):
                 if not device.startswith('.'):
-                    data[user][device] = {}
-                    for rom in showRoms(user,device):
-                        if not rom.startswith('.'):
-                            data[user][device][rom] = {}
-                            u, d = showDetails(user, device, rom)
-                            for url in u.splitlines():
-                                data[user][device][rom]['url'] = url
-                            for date in d.splitlines():
-                                data[user][device][rom]['date'] = date
+                    if os.path.isdir("%s/%s" % (user, device)):
+                        data[user][device] = {}
+                        for rom in showRoms(user,device):
+                            if not rom.startswith('.'):
+                                if rom.endswith('zip'):
+                                    data[user][device][rom] = {}
+                                    u, d = showDetails(user, device, rom)
+                                    for url in u.splitlines():
+                                        data[user][device][rom]['url'] = url
+                                    for date in d.splitlines():
+                                        data[user][device][rom]['date'] = date
 
     print(json.dumps(data))
 
