@@ -1,0 +1,89 @@
+<html>
+	<head>
+		<title>xfer.AOKP.co</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<script src="js/handlebars.js"></script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12" id="devs-container"></div>
+			</div>
+		</div>
+	</body>
+	<script>
+		$(document).ready(function () { 
+			$.ajax({
+				url: "http://xfer.aokp.co/romlistings.py?mode=all",
+				success: function (data) {
+					var devs = Object.keys(data);
+					devs.every(function(users) {
+						if ( users.length === 0 ) { return false }
+						$('<div/>', {
+							'class': 'panel panel-primary',
+							id: 'panel_'+users,
+						}).appendTo('#devs-container');
+						$('<div/>', {
+							text: users,
+							'class': 'panel-heading',
+							id: 'heading_'+users,
+							'data-parent': '#devs-container',
+							'data-toggle': 'collapse',
+							href: '#collapse_'+users,
+						}).appendTo('#panel_'+users);
+
+
+						$('<div/>', {
+							'class': 'panel-collapse collapse',
+							id: 'collapse_'+users,
+						}).appendTo('#panel_'+users);
+						$('<ul/>', {
+							'class': 'list-group',
+							id: 'ul_'+users,
+						}).appendTo('#collapse_'+users);
+						var devices = Object.keys(data[users]);
+						devices.every(function(device) {
+							if ( device.length === 0 ) { return false }
+							$('<li/>', {
+								text: device,
+								'class': 'list-group-item',
+								id: 'li_'+device,
+								'data-parent': '#ul_'+users,
+								'data-toggle': 'collapse',
+								href: '#collapse_'+device,
+							}).appendTo('#ul_'+users);
+
+
+							$('<div/>', {
+								'class': 'panel-collapse collapse',
+								id: 'collapse_'+device,
+							}).appendTo('#ul_'+users);
+							$('<ul/>', {
+								'class': 'list-group',
+								id: 'ul_'+device,
+							}).appendTo('#collapse_'+device);
+							var roms = Object.keys(data[users][device]);
+							roms.every(function(rom) {
+								if ( rom.length === 0 ) { return false }
+								var url = data[users][device][rom].url
+								var date = data[users][device][rom].date
+								$('<a/>', {
+									'class': 'list-group-item',
+									id: 'a_'+rom,
+									text: rom,
+									href: url,
+								}).appendTo('#ul_'+device);
+								return true;
+							});
+							return true;
+						});
+						return true;
+					});
+				}
+			});
+		});
+	</script>
+</html>
