@@ -53,12 +53,12 @@ def showAll():
                     {
                         'codename': device,
                         'roms': [
-                            {
+                            (lambda g: {
                                 'filename': rom,
-                                'url': getDetails(user, device, rom).getUrl(),
-                                'date': getDetails(user, device, rom).getDate(),
-                                'size': getDetails(user, device, rom).getSize()
-                            }
+                                'url': g.getUrl(),
+                                'date': g.getDate(),
+                                'size': g.getSize()
+                            })(getDetails(user, device, rom))
                             for rom in listRoms(user, device) if not rom.startswith('.') if rom.endswith('zip')
                         ]
                     }
