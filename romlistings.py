@@ -16,19 +16,19 @@ from parse_config import parse_config
 
 class getDetails:
     def __init__(self, user, device, rom):
-        self.u = user
-        self.d = device
-        self.r = rom
+        self.user = user
+        self.device = device
+        self.rom = rom
 
     def getUrl(self):
-        return "http://xfer.aokp.co/%s/%s/%s" % (self.u, self.d, self.r)
+        return "http://xfer.aokp.co/%s/%s/%s" % (self.user, self.device, self.rom)
 
     def getDate(self):
-        modified_date = os.path.getmtime("%s/%s/%s" % (self.u, self.d, self.r))
+        modified_date = os.path.getmtime("%s/%s/%s" % (self.user, self.device, self.rom))
         return datetime.fromtimestamp(modified_date).strftime("%Y-%m-%dT%H:%M:%S")
 
     def getSize(self):
-        return os.path.getsize("%s/%s/%s" % (self.u, self.d, self.r))
+        return os.path.getsize("%s/%s/%s" % (self.user, self.device, self.rom))
 
 def listDevices(user):
     return os.listdir(user)
