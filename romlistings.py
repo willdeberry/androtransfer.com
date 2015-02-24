@@ -10,7 +10,25 @@
 
 import json
 import os
+import sys; sys.path = ["/var/www/androtransfer.com/public_html"] + sys.path
 from datetime import datetime
+from parse_config import parse_config
+
+class getDetails:
+    def __init__(self, user, device, rom):
+        self.u = user
+        self.d = device
+        self.r = rom
+
+    def getUrl(self):
+        return "http://xfer.aokp.co/%s/%s/%s" % (self.u, self.d, self.r)
+
+    def getDate(self):
+        modified_date = os.path.getmtime("%s/%s/%s" % (self.u, self.d, self.r))
+        return datetime.fromtimestamp(modified_date).strftime("%Y-%m-%dT%H:%M:%S")
+
+    def getSize(self):
+        return os.path.getsize("%s/%s/%s" % (self.u, self.d, self.r))
 
 def listDevices(user):
     return os.listdir(user)
@@ -18,13 +36,9 @@ def listDevices(user):
 def listRoms(user,device):
     return os.listdir("%s/%s" % (user, device))
 
-def getUrl(user, device, rom):
-    return "http://xfer.aokp.co/%s/%s/%s" % (user, device, rom)
-
-
-def getDate(user, device, rom):
-    modified_date = os.path.getmtime("%s/%s/%s" % (user, device, rom))
-    return datetime.fromtimestamp(modified_date).strftime("%Y-%m-%dT%H:%M:%S")
+def getConfig(user, item):
+    user_info = parse_config('user_info/%s' % (user))
+    return user_info[item]
 
 def showAll():
     data = {}
@@ -32,14 +46,18 @@ def showAll():
         data['users'] = [
             {
                 'name': user,
+                'github': getConfig(user, 'github'),
+                'gravatar': getConfig(user, 'gravatar'),
+                'twitter': getConfig(user, 'twitter'),
                 'devices': [
                     {
                         'codename': device,
                         'roms': [
                             {
                                 'filename': rom,
-                                'url': getUrl(user, device, rom),
-                                'date': getDate(user, device, rom)
+                                'url': getDetails(user, device, rom).getUrl(),
+                                'date': getDetails(user, device, rom).getDate(),
+                                'size': getDetails(user, device, rom).getSize()
                             }
                             for rom in listRoms(user, device) if not rom.startswith('.') if rom.endswith('zip')
                         ]
