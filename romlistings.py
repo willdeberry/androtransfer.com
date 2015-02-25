@@ -10,7 +10,6 @@
 
 import json
 import os
-import sys; sys.path = ["/var/www/androtransfer.com/public_html"] + sys.path
 from datetime import datetime
 from parse_config import parse_config
 
@@ -37,8 +36,15 @@ def listRoms(user,device):
     return os.listdir("%s/%s" % (user, device))
 
 def getConfig(user, item):
-    user_info = parse_config('user_info/%s' % (user))
-    return user_info[item]
+    try:
+        user_info = parse_config('user_info/%s' % (user))
+        return user_info[item]
+    except IOError:
+        pass
+    except KeyError:
+        pass
+
+    return None
 
 def showAll():
     data = {}
@@ -67,11 +73,11 @@ def showAll():
             }
             for user in users_file.read().splitlines()
         ]
-    print(json.dumps(data))
+    return json.dumps(data)
 
 def main():
     print("Content-type:application/json\n")
-    showAll()
+    print(showAll())
 
 if __name__ == "__main__":
      main()
