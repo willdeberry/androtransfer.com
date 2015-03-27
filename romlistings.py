@@ -16,55 +16,41 @@ from parse_config import parse_config
 
 
 class GetDetails(object):
-    """
-    Details class for a ROM associated with a device and user
-    """
+    """Details class for a ROM associated with a device and user """
     def __init__(self, user, device, rom):
         self.user = user
         self.device = device
         self.rom = rom
 
     def get_url(self):
-        """
-        Return the URL string for this ROM
-        """
+        """Return the URL string for this ROM"""
         return "http://xfer.aokp.co/%s/%s/%s" % (self.user, self.device,
                                                  self.rom)
 
     def get_date(self):
-        """
-        Return a nicely formatted last-modified string for this ROM
-        """
+        """Return a nicely formatted last-modified string for this ROM"""
         modified_date = os.path.getmtime("%s/%s/%s" % (self.user, self.device,
                                                        self.rom))
         return datetime.fromtimestamp(modified_date).strftime(
             "%Y-%m-%dT%H:%M:%S")
 
     def get_size(self):
-        """
-        Return the file size for this ROM
-        """
+        """Return the file size for this ROM"""
         return os.path.getsize("%s/%s/%s" % (self.user, self.device, self.rom))
 
 
 def list_devices(user):
-    """
-    Return a directory listing of devices for the specified user
-    """
+    """Return a directory listing of devices for the specified user"""
     return os.listdir(user)
 
 
 def list_roms(user, device):
-    """
-    Return a directory listing of ROMs for the specified user and device
-    """
+    """Return a directory listing of ROMs for the specified user and device"""
     return os.listdir("%s/%s" % (user, device))
 
 
 def get_config(user, item):
-    """
-    Return appropriate user info for a given item or None on failure
-    """
+    """Return appropriate user info for a given item or None on failure"""
     try:
         user_info = parse_config('user_info/%s' % (user))
         return user_info[item]
@@ -76,9 +62,7 @@ def get_config(user, item):
 
 
 def show_all():
-    """
-    Return a JSON string containing all data
-    """
+    """Return a JSON string containing all data"""
     data = {}
     with open('.users') as users_file:
         data['users'] = [
@@ -91,8 +75,8 @@ def show_all():
                     {
                         'codename': device,
                         'roms': [
-                            (lambda g, this_rom=rom: {
-                                'filename': this_rom,
+                            (lambda g: {
+                                'filename': rom,
                                 'url': g.get_url(),
                                 'date': g.get_date(),
                                 'size': g.get_size()
@@ -113,9 +97,7 @@ def show_all():
 
 
 def main():
-    """
-    Main function, shows all data as JSON
-    """
+    """Main function, shows all data as JSON"""
     print("Content-type:application/json\n")
     print(show_all())
 
